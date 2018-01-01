@@ -1,6 +1,7 @@
 {
   "name": "Dashboard",
   "version": "0.0.0",
+  "author": "Devin Checa",
   "description": "Dashboard mock from PSD file",
   "scripts": {
     "test": "mocha || true",
