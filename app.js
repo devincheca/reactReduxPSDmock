@@ -21,6 +21,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'reactOutput')));
+app.use(express.static('public'));
+app.use(express.static('reactOutput'));
 
 app.use('/', index);
 app.use('/users', users);
