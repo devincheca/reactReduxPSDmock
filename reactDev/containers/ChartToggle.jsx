@@ -13,7 +13,6 @@ const mapStateToProps = (state) => {
       labels: colors,
       datasets:[{
         label: 'Colors',
-        responsive: true,
         data:[
           randomInteger(),
           randomInteger(),
@@ -23,7 +22,6 @@ const mapStateToProps = (state) => {
           randomInteger()
         ],
         backgroundColor: colors,
-        scaleFontColor: 'beige'
       }]
     };
   }

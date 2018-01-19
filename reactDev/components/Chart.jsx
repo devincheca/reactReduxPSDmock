@@ -15,7 +15,9 @@ const Chart = ({ source }) =>
   {
     window.Chart.defaults.global.defaultFontColor = 'beige'
     return (
-      <div className="animated slideInDown" style={styles.orchid.orchidBorder} src={source.location}>
+      <div 
+        className="animated slideInDown mx-auto" 
+        style={Object.assign({}, styles.orchid.orchidBorder, styles.align.center, { maxWidth: '555px' })}>
         <Bar
           data={source.data}
           options={{}}

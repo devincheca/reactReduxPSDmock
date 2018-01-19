@@ -12732,7 +12732,9 @@ var Chart = function Chart(_ref) {
     window.Chart.defaults.global.defaultFontColor = 'beige';
     return _react2.default.createElement(
       'div',
-      { className: 'animated slideInDown', style: _styles2.default.orchid.orchidBorder, src: source.location },
+      {
+        className: 'animated slideInDown mx-auto',
+        style: Object.assign({}, _styles2.default.orchid.orchidBorder, _styles2.default.align.center, { maxWidth: '555px' }) },
       _react2.default.createElement(_reactChartjs.Bar, {
         data: source.data,
         options: {}
@@ -30527,10 +30529,8 @@ var mapStateToProps = function mapStateToProps(state) {
       labels: colors,
       datasets: [{
         label: 'Colors',
-        responsive: true,
         data: [randomInteger(), randomInteger(), randomInteger(), randomInteger(), randomInteger(), randomInteger()],
-        backgroundColor: colors,
-        scaleFontColor: 'beige'
+        backgroundColor: colors
       }]
     };
   }
