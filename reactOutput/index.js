@@ -12726,17 +12726,19 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Chart = function Chart(_ref) {
   var source = _ref.source;
 
-  return _react2.default.createElement(
-    'div',
-    { className: 'animated slideInDown', style: _styles2.default.orchid.orchidBorder, src: source.location },
-    _react2.default.createElement(_reactChartjs.Bar, {
-      data: source.data,
-      options: {}
-    })
-  );
-  /*return (
-    <img className="img-fluid animated slideInDown" style={styles.orchid.orchidBorder} src={source.location} />
-  )*/
+  if (source.location === 'images/ring.jpg') {
+    return _react2.default.createElement('img', { className: 'img-fluid animated slideInDown', style: _styles2.default.orchid.orchidBorder, src: source.location });
+  } else {
+    window.Chart.defaults.global.defaultFontColor = 'beige';
+    return _react2.default.createElement(
+      'div',
+      { className: 'animated slideInDown', style: _styles2.default.orchid.orchidBorder, src: source.location },
+      _react2.default.createElement(_reactChartjs.Bar, {
+        data: source.data,
+        options: {}
+      })
+    );
+  }
 };
 
 Chart.propTypes = {
@@ -30524,9 +30526,11 @@ var mapStateToProps = function mapStateToProps(state) {
     return {
       labels: colors,
       datasets: [{
-        label: colors,
+        label: 'Colors',
+        responsive: true,
         data: [randomInteger(), randomInteger(), randomInteger(), randomInteger(), randomInteger(), randomInteger()],
-        backgroundColor: colors
+        backgroundColor: colors,
+        scaleFontColor: 'beige'
       }]
     };
   }
